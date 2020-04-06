@@ -1,6 +1,5 @@
 ﻿using EcoSavingsMobileApps.Models;
 using EcoSavingsMobileApps.Utilities;
-using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
@@ -8,7 +7,7 @@ using Xamarin.Forms;
 
 namespace EcoSavingsMobileApps.ViewModel
 {
-	class SignUpViewModel
+	class SignUpViewModel : INotifyPropertyChanged
 	{
 		private bool canSignUp;
 
@@ -21,7 +20,6 @@ namespace EcoSavingsMobileApps.ViewModel
 				OnPropertyChanged();
 			}
 		}
-
 
 		public User User { get; set; }
 

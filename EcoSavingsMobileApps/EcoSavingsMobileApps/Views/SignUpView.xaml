@@ -90,34 +90,19 @@
                        TextColor="Black"
                        Text="{Binding ConfirmPassword, Mode=TwoWay}" />
 
-                <Label Grid.Row="4"
-                       HorizontalOptions="Start"
-                       VerticalOptions="Center"
-                       Grid.Column="0"
-                       Text="User Type:"
-                       FontSize="20"
-                       TextColor="Black" />
-
-                <Entry Grid.Row="4"
-                       Grid.Column="1"
-                       Placeholder="Enter User Type"
-                       IsPassword="True"
-                       FontSize="20"
-                       TextColor="Black"
-                       Text="{Binding ConfirmPassword, Mode=TwoWay}" />
-
-                <Button Grid.Row="7"
+                <Button Grid.Row="5"
                         Grid.ColumnSpan="2"
                         Margin="30, 0"
                         VerticalOptions="FillAndExpand"
                         HorizontalOptions="FillAndExpand"
                         Text="Create Account"
                         FontSize="20"
-                        TextColor="BlanchedAlmond"
-                        BackgroundColor="CornflowerBlue"
+                        TextColor="Blue"
+                        BackgroundColor="Goldenrod"
                         Command="{Binding SignUp}"
                         CommandParameter="{Binding CanSignUp}"
                         CornerRadius="10"/>
+
             </Grid>
 
         </StackLayout>
