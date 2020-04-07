@@ -9,7 +9,7 @@ namespace EcoSavingsMobileApps.ViewModel
 {
     class RecyclerLoginViewModel : INotifyPropertyChanged
     {
-        public Collector User { get; set; }
+        public Recycler Recycler { get; set; }
 
         private bool canSignInRecycler;
 
@@ -58,11 +58,11 @@ namespace EcoSavingsMobileApps.ViewModel
         {
             get
             {
-                return User.Username; ;
+                return Recycler.Username; ;
             }
             set
             {
-                User.Username = value;
+                Recycler.Username = value;
                 CanSignInRecycler = CheckUsernameAndPassword();
                 OnPropertyChanged();
             }
@@ -72,11 +72,11 @@ namespace EcoSavingsMobileApps.ViewModel
         {
             get
             {
-                return User.Password;
+                return Recycler.Password;
             }
             set
             {
-                User.Password = value;
+                Recycler.Password = value;
                 CanSignInRecycler = CheckUsernameAndPassword();
                 OnPropertyChanged();
             }
@@ -84,8 +84,8 @@ namespace EcoSavingsMobileApps.ViewModel
 
         private bool CheckUsernameAndPassword()
         {
-            bool result = !string.IsNullOrWhiteSpace(User.Username) &&
-                          !string.IsNullOrWhiteSpace(User.Password);
+            bool result = !string.IsNullOrWhiteSpace(Recycler.Username) &&
+                          !string.IsNullOrWhiteSpace(Recycler.Password);
             return result;
         }
 
@@ -96,7 +96,7 @@ namespace EcoSavingsMobileApps.ViewModel
         {
             SignInRecycler = new Command(SignInExecute, RecyclerCanSignIn);
             OpenRecyclerSignUpView = new Command(OpenRecyclerSignUpExecute);
-            User = new Collector();
+            Recycler = new Recycler();
         }
 
         private bool RecyclerCanSignIn(object arg)
@@ -109,7 +109,7 @@ namespace EcoSavingsMobileApps.ViewModel
             LoginStatus = string.Empty;
             if (CheckUsernameAndPassword())
             {
-                User a = await Authenticate.GetUser(User);
+                Recycler a = await Authenticate.GetRecycler(Recycler);
                 if (a != null)
                 {
                     if (a.Password == Password)

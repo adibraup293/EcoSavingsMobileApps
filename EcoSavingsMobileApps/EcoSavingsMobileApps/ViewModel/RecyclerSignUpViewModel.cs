@@ -22,17 +22,17 @@ namespace EcoSavingsMobileApps.ViewModel
             }
         }
 
-        public Recycler User { get; set; }
+        public Recycler Recycler { get; set; }
 
         public string Username
         {
             get
             {
-                return User.Username;
+                return Recycler.Username;
             }
             set
             {
-                User.Username = value;
+                Recycler.Username = value;
                 RecyclerCanSignUp = (!string.IsNullOrWhiteSpace(Username) &&
                              !string.IsNullOrWhiteSpace(Password) &&
                              !string.IsNullOrWhiteSpace(ConfirmPassword) &&
@@ -45,11 +45,11 @@ namespace EcoSavingsMobileApps.ViewModel
         {
             get
             {
-                return User.Password;
+                return Recycler.Password;
             }
             set
             {
-                User.Password = value;
+                Recycler.Password = value;
                 RecyclerCanSignUp = (!string.IsNullOrWhiteSpace(Username) &&
                              !string.IsNullOrWhiteSpace(Password) &&
                              !string.IsNullOrWhiteSpace(ConfirmPassword) &&
@@ -99,7 +99,7 @@ namespace EcoSavingsMobileApps.ViewModel
         public RecyclerSignUpViewModel()
         {
             CanSignUpRecycler = new Command(SignUpExecute, CanSignUp);
-            User = new Recycler();
+            Recycler = new Recycler();
         }
 
         private async void SignUpExecute(object obj)
@@ -110,7 +110,7 @@ namespace EcoSavingsMobileApps.ViewModel
                     !string.IsNullOrWhiteSpace(Password) &&
                     !string.IsNullOrWhiteSpace(FullName))
                 {
-                    await Authenticate.AddUser(User);
+                    await Authenticate.AddRecycler(Recycler);
                     await Application.Current.MainPage.Navigation.PopAsync();
                 }
             }
