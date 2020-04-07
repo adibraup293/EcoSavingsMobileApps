@@ -51,7 +51,7 @@
                         FontSize="20"
                         TextColor="Wheat"
                         BackgroundColor="Purple"
-                        Command="{Binding SignUp}"
+                        Command="{Binding OpenLoginView}"
                         CornerRadius="10"/>
 
                 <Button Grid.Row="5"

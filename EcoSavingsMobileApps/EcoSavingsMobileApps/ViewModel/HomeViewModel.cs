@@ -11,11 +11,13 @@ namespace EcoSavingsMobileApps.ViewModel
     {
         public ICommand OpenCollectorLoginView { get; set; }
         public ICommand OpenRecyclerLoginView { get; set; }
+        public ICommand OpenLoginView { get; set; }
 
         public HomeViewModel()
         {
             OpenCollectorLoginView = new Command(OpenCollectorLoginExecute);
             OpenRecyclerLoginView = new Command(OpenRecyclerLoginExecute);
+            OpenLoginView = new Command(OpenLoginViewExecute);
         }
 
         private void OpenSignUpExecute(object obj)
@@ -34,6 +36,12 @@ namespace EcoSavingsMobileApps.ViewModel
         {
             Application.Current.MainPage.Navigation.PushAsync(
                 new Views.RecyclerLoginView());
+        }
+
+        private void OpenLoginViewExecute(object obj)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(
+                new Views.LogInView());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

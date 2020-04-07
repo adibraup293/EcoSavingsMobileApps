@@ -34,7 +34,8 @@ namespace EcoSavingsMobileApps.ViewModel
 				User.Username = value;
 				CanSignUp = (!string.IsNullOrWhiteSpace(Username) &&
 							 !string.IsNullOrWhiteSpace(Password) &&
-							 !string.IsNullOrWhiteSpace(ConfirmPassword));
+							 !string.IsNullOrWhiteSpace(ConfirmPassword) &&
+							 !string.IsNullOrWhiteSpace(FullName));
 				OnPropertyChanged();
 			}
 		}
@@ -50,7 +51,8 @@ namespace EcoSavingsMobileApps.ViewModel
 				User.Password = value;
 				CanSignUp = (!string.IsNullOrWhiteSpace(Username) &&
 							 !string.IsNullOrWhiteSpace(Password) &&
-							 !string.IsNullOrWhiteSpace(ConfirmPassword));
+							 !string.IsNullOrWhiteSpace(ConfirmPassword) &&
+							 !string.IsNullOrWhiteSpace(FullName));
 				OnPropertyChanged();
 			}
 		}
@@ -67,7 +69,26 @@ namespace EcoSavingsMobileApps.ViewModel
 				confirmPassword = value;
 				CanSignUp = (!string.IsNullOrWhiteSpace(Username) &&
 							 !string.IsNullOrWhiteSpace(Password) &&
-							 !string.IsNullOrWhiteSpace(ConfirmPassword));
+							 !string.IsNullOrWhiteSpace(ConfirmPassword) &&
+							 !string.IsNullOrWhiteSpace(FullName));
+				OnPropertyChanged();
+			}
+		}
+
+		private string fullName;
+		public string FullName
+		{
+			get
+			{
+				return fullName;
+			}
+			set
+			{
+				fullName = value;
+				CanSignUp = (!string.IsNullOrWhiteSpace(Username) &&
+							 !string.IsNullOrWhiteSpace(Password) &&
+							 !string.IsNullOrWhiteSpace(ConfirmPassword) &&
+							 !string.IsNullOrWhiteSpace(FullName));
 				OnPropertyChanged();
 			}
 		}

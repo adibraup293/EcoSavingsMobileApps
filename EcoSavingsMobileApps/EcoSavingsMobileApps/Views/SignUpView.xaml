@@ -90,7 +90,23 @@
                        TextColor="Black"
                        Text="{Binding ConfirmPassword, Mode=TwoWay}" />
 
-                <Button Grid.Row="5"
+                <Label Grid.Row="4"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Grid.Column="0"
+                       Text="Full Name:"
+                       FontSize="20"
+                       TextColor="Black"/>
+
+                <Entry Grid.Row="4"
+                       Grid.Column="1"
+                       Placeholder="Enter full name"
+                       IsPassword="True"
+                       FontSize="20"
+                       TextColor="Black"
+                       Text="{Binding FullName, Mode=TwoWay}"/>
+
+                <Button Grid.Row="7"
                         Grid.ColumnSpan="2"
                         Margin="30, 0"
                         VerticalOptions="FillAndExpand"

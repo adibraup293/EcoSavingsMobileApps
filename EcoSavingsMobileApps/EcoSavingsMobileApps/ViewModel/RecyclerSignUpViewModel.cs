@@ -22,7 +22,7 @@ namespace EcoSavingsMobileApps.ViewModel
             }
         }
 
-        public Recycler Recycler { get; set; }
+        public static Recycler Recycler { get; set; }
 
         public string Username
         {
@@ -98,8 +98,8 @@ namespace EcoSavingsMobileApps.ViewModel
 
         public RecyclerSignUpViewModel()
         {
-            CanSignUpRecycler = new Command(SignUpExecute, CanSignUp);
             Recycler = new Recycler();
+            CanSignUpRecycler = new Command(SignUpExecute, CanSignUp);
         }
 
         private async void SignUpExecute(object obj)

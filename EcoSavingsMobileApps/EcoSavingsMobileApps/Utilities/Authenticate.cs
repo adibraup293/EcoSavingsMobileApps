@@ -81,8 +81,8 @@ namespace EcoSavingsMobileApps.Utilities
                             Password = item.Object.Password,
                             Username = item.Object.Username,
                             FullName = item.Object.FullName,
-                            EcoLevel = item.Object.EcoLevel
-                            //TotalPoints = item.Object.TotalPoints
+                            EcoLevel = item.Object.EcoLevel,
+                            TotalPoints = item.Object.TotalPoints
                         }).ToList();
                 }
                 catch (Exception ex)
