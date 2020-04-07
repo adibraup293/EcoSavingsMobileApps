@@ -12,7 +12,7 @@ namespace EcoSavingsMobileApps
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LogInView());
+            MainPage = new NavigationPage(new HomeView());
         }
 
         protected override void OnStart()

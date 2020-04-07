@@ -17,8 +17,7 @@
         <StackLayout Margin="20"
                      BackgroundColor="CadetBlue"
                      Padding="20"
-                     BindingContext="{StaticResource Key=SignUpVM}">
-
+                     BindingContext="{StaticResource Key=HomeVM}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.35*"/>
@@ -53,7 +52,6 @@
                         TextColor="Wheat"
                         BackgroundColor="Purple"
                         Command="{Binding SignUp}"
-                        CommandParameter="{Binding CanSignUp}"
                         CornerRadius="10"/>
 
                 <Button Grid.Row="5"
@@ -65,8 +63,7 @@
                         FontSize="20"
                         TextColor="LightGoldenrodYellow"
                         BackgroundColor="SlateGray"
-                        Command="{Binding SignUp}"
-                        CommandParameter="{Binding CanSignUp}"
+                        Command="{Binding OpenCollectorSignUpView}"
                         CornerRadius="10"/>
                 
                 <Button Grid.Row="7"
