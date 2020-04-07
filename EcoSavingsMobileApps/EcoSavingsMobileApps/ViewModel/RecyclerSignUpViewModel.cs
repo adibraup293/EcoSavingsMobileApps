@@ -99,10 +99,10 @@ namespace EcoSavingsMobileApps.ViewModel
         public RecyclerSignUpViewModel()
         {
             Recycler = new Recycler();
-            CanSignUpRecycler = new Command(SignUpExecute, CanSignUp);
+            CanSignUpRecycler = new Command(RecyclerSignUpExecute, CanRecyclerSignUp);
         }
 
-        private async void SignUpExecute(object obj)
+        private async void RecyclerSignUpExecute(object obj)
         {
             if (CheckPassword())
             {
@@ -110,13 +110,13 @@ namespace EcoSavingsMobileApps.ViewModel
                     !string.IsNullOrWhiteSpace(Password) &&
                     !string.IsNullOrWhiteSpace(FullName))
                 {
-                    await Authenticate.AddRecycler(Recycler);
+                    await RecyclerAuthenticate.AddRecycler(Recycler);
                     await Application.Current.MainPage.Navigation.PopAsync();
                 }
             }
         }
 
-        private bool CanSignUp(object arg)
+        private bool CanRecyclerSignUp(object arg)
         {
             return RecyclerCanSignUp;
         }

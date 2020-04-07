@@ -99,11 +99,11 @@
 
                 <Entry Grid.Row="4"
                        Grid.Column="1"
-                       Placeholder="Enter full name"
-                       IsPassword="True"
+                       Placeholder="Enter fullname"
                        FontSize="20"
-                       TextColor="Black"
+                       TextColor="Black"                       
                        Text="{Binding FullName, Mode=TwoWay}"/>
+
 
                 <Button Grid.Row="7"
                         Grid.ColumnSpan="2"
