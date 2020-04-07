@@ -6,6 +6,10 @@ namespace EcoSavingsMobileApps.Models
 {
     class Recycler : User
     {
-        public string ecoLevel { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string FullName { get; set; }
+        public int TotalPoints { get; set; }
+        public string EcoLevel { get; set; }
     }
 }

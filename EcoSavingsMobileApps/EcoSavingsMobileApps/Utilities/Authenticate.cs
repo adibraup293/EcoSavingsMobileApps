@@ -23,7 +23,10 @@ namespace EcoSavingsMobileApps.Utilities
                         .OnceAsync<User>()).Select(item => new User
                         {
                             Password = item.Object.Password,
-                            Username = item.Object.Username
+                            Username = item.Object.Username,
+                            FullName = item.Object.FullName,
+                            TotalPoints = item.Object.TotalPoints,
+                            UserType = item.Object.UserType
                         }).ToList();
                 }
                 catch (Exception ex)

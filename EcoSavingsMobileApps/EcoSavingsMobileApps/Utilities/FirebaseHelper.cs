@@ -62,6 +62,21 @@ namespace EcoSavingsMobileApps.Utilities
             }
         }
 
+        public static async Task AddReycler(Recycler user)
+        {
+            try
+            {
+                if (user != null)
+                {
+                    await firebase.Child("Users").PostAsync(user);
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Firebase Exception FH2", ex.Message, "OK");
+            }
+        }
+
 
     }
 }

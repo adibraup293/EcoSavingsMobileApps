@@ -63,7 +63,7 @@
                         FontSize="20"
                         TextColor="LightGoldenrodYellow"
                         BackgroundColor="SlateGray"
-                        Command="{Binding OpenCollectorSignUpView}"
+                        Command="{Binding OpenCollectorLoginView}"
                         CornerRadius="10"/>
                 
                 <Button Grid.Row="7"
@@ -75,8 +75,7 @@
                         FontSize="20"
                         TextColor="Black"
                         BackgroundColor="DeepSkyBlue"
-                        Command="{Binding SignUp}"
-                        CommandParameter="{Binding CanSignUp}"
+                        Command="{Binding OpenRecyclerLoginView}"
                         CornerRadius="10"/>
 
             </Grid>

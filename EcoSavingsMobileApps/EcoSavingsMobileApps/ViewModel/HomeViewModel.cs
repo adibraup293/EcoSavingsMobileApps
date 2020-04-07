@@ -9,11 +9,13 @@ namespace EcoSavingsMobileApps.ViewModel
 {
     class HomeViewModel : INotifyPropertyChanged
     {
-        public ICommand OpenCollectorSignUpView { get; set; }
+        public ICommand OpenCollectorLoginView { get; set; }
+        public ICommand OpenRecyclerLoginView { get; set; }
 
         public HomeViewModel()
         {
-            OpenCollectorSignUpView = new Command(OpenCollectorSignUpExecute);
+            OpenCollectorLoginView = new Command(OpenCollectorLoginExecute);
+            OpenRecyclerLoginView = new Command(OpenRecyclerLoginExecute);
         }
 
         private void OpenSignUpExecute(object obj)
@@ -22,16 +24,19 @@ namespace EcoSavingsMobileApps.ViewModel
                 new Views.SignUpView());
         }
 
-        private void OpenCollectorSignUpExecute(object obj)
+        private void OpenCollectorLoginExecute(object obj)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(
+                new Views.CollectorLoginView()); 
+        }
+
+        private void OpenRecyclerLoginExecute(object obj)
         {
             Application.Current.MainPage.Navigation.PushAsync(
                 new Views.RecyclerLoginView());
-            
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        
     }
 }

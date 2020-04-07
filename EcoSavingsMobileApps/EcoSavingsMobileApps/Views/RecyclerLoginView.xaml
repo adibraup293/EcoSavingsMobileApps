@@ -3,13 +3,106 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:EcoSavingsMobileApps.ViewModel"
              mc:Ignorable="d"
              x:Class="EcoSavingsMobileApps.Views.RecyclerLoginView">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:RecyclerLoginViewModel x:Key="RecyclerLoginVM" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BindingContext="{StaticResource Key=RecyclerLoginVM}"
+                     Margin="10"
+                     Padding="10"
+                     BackgroundColor="DeepSkyBlue">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.ColumnSpan="2"
+                       HorizontalTextAlignment="Center"                        
+                       FontSize="30"
+                       Text="Welcome Recycler!" />
+
+                <Label Grid.Row="1" 
+                       Grid.ColumnSpan="2" 
+                       HorizontalTextAlignment="Center"
+                       FontSize="15"
+                       TextColor="Red"
+                       Text="{Binding LoginStatus}" />
+
+                <Label Grid.Row="2"
+                       Grid.Column="0" 
+                       VerticalTextAlignment="Center"
+                       Text="Username:"
+                       FontSize="20"
+                       TextColor="Black" />
+                
+
+                <Entry Grid.Row="2"
+                       Grid.Column="1"
+                       Placeholder="Enter username"
+                       FontSize="20"
+                       TextColor="Black"
+                       Text="{Binding Username, Mode=TwoWay}" />
+
+                <Label Grid.Row="3"
+                       Grid.Column="0"
+                       VerticalTextAlignment="Center"
+                       Text="Password:"
+                       FontSize="20"
+                       TextColor="Black" />
+
+                <Entry x:Name="entPassword" Grid.Row="3"
+                       Grid.Column="1"
+                       Placeholder="Enter password"
+                       IsPassword="{Binding ShowPassword, Mode=OneWay}"
+                       FontSize="20"
+                       TextColor="Black"
+                       Text="{Binding Password}" />
+
+                <Label Grid.Row="4"
+                       Grid.Column="0" 
+                       VerticalTextAlignment="Center"
+                       Text="show password"
+                       FontSize="20"
+                       TextColor="Black" />
+
+                <CheckBox x:Name="cbShowPassword"
+                          Grid.Row="4"
+                          Grid.Column="1"
+                          IsChecked="{Binding ShowPassword, Mode=OneWayToSource}"/>
+
+                <Button Grid.Row="5"
+                        Text="Login"
+                        TextColor="Wheat"
+                        BackgroundColor="SaddleBrown"
+                        FontSize="20"
+                        Command="{Binding SignInRecycler}"
+                        CommandParameter="{Binding CanSign}"/>
+
+                <Button Grid.Row="5"
+                        Grid.Column="1" 
+                        Text="Sign Up"
+                        TextColor="Beige"
+                        BackgroundColor="Brown"
+                        Font="20"
+                        Command="{Binding OpenRecyclerSignUpView}"/>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
