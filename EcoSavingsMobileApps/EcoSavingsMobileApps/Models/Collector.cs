@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EcoSavingsMobileApps.Models
 {
-    class Collector : User
+    class Collector 
     {
         public string Username { get; set; }
         public string Password { get; set; }
