@@ -13,7 +13,7 @@ namespace EcoSavingsMobileApps.Utilities
 {
     class FirebaseHelper
     {
-        static readonly FirebaseClient firebase = new FirebaseClient("https://mobileassignment-1ca2e.firebaseio.com/");
+        static readonly FirebaseClient firebase = new FirebaseClient("https://ecosavingsmobileapps.firebaseio.com/");
 
         public static async Task<ObservableCollection<User>> GetAllUsers()
         {
