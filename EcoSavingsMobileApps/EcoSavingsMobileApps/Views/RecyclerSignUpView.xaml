@@ -9,15 +9,15 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:RecyclerSignUpViewModel x:Key="RecyclerSignUpVM" />
+            <local:RecyclerSignUpViewModel x:Key="RecyclerSUVM" />
         </ResourceDictionary>
     </ContentPage.Resources>
-
+    
     <ContentPage.Content>
         <StackLayout Margin="20"
                      BackgroundColor="DeepSkyBlue"
                      Padding="20"
-                     BindingContext="{StaticResource Key=RecyclerSignUpVM}">
+                     BindingContext="{StaticResource Key=RecyclerSUVM}">
 
             <Grid>
                 <Grid.RowDefinitions>
@@ -55,7 +55,7 @@
                        Placeholder="Enter username"
                        FontSize="20"
                        TextColor="Black"                       
-                       Text="{Binding Username, Mode=TwoWay}"/>
+                       Text="{Binding RecyclerUsername, Mode=TwoWay}"/>
 
                 <Label Grid.Row="2"
                        HorizontalOptions="Start"
@@ -71,7 +71,7 @@
                        IsPassword="True"
                        FontSize="20"
                        TextColor="Black"
-                       Text="{Binding Password, Mode=TwoWay}"/>
+                       Text="{Binding RecyclerPassword, Mode=TwoWay}"/>
 
                 <Label Grid.Row="3"
                        HorizontalOptions="Start"
@@ -87,7 +87,7 @@
                        IsPassword="True"
                        FontSize="20"
                        TextColor="Black"
-                       Text="{Binding ConfirmPassword, Mode=TwoWay}" />
+                       Text="{Binding RecyclerConfirmPassword, Mode=TwoWay}" />
 
                 <Label Grid.Row="4"
                        HorizontalOptions="Start"
@@ -102,10 +102,9 @@
                        Placeholder="Enter fullname"
                        FontSize="20"
                        TextColor="Black"                       
-                       Text="{Binding FullName, Mode=TwoWay}"/>
+                       Text="{Binding RecyclerFullName, Mode=TwoWay}"/>
 
-
-                <Button Grid.Row="7"
+                <Button Grid.Row="6"
                         Grid.ColumnSpan="2"
                         Margin="30, 0"
                         VerticalOptions="FillAndExpand"
@@ -113,13 +112,13 @@
                         Text="Create Account"
                         FontSize="20"
                         TextColor="Blue"
-                        BackgroundColor="Goldenrod"
-                        Command="{Binding CanSignUpRecycler}"
+                        BackgroundColor="YellowGreen"
+                        Command="{Binding SignUpRecycler}"
                         CommandParameter="{Binding RecyclerCanSignUp}"
                         CornerRadius="10"/>
 
             </Grid>
-
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

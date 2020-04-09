@@ -20,11 +20,11 @@ namespace EcoSavingsMobileApps.ViewModel
             OpenLoginView = new Command(OpenLoginViewExecute);
         }
 
-        private void OpenSignUpExecute(object obj)
-        {
-            Application.Current.MainPage.Navigation.PushAsync(
-                new Views.SignUpView());
-        }
+          private void OpenSignUpExecute(object obj)
+          {
+              Application.Current.MainPage.Navigation.PushAsync(
+                  new Views.CollectorLoginView());
+          }
 
         private void OpenCollectorLoginExecute(object obj)
         {
@@ -45,6 +45,10 @@ namespace EcoSavingsMobileApps.ViewModel
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged([CallerMemberName] string propertyName = "")
+		{
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+		}
         
     }
 }

@@ -1,5 +1,4 @@
-﻿
-namespace EcoSavingsMobileApps.Models
+﻿namespace EcoSavingsMobileApps.Models
 {
     class User
     {

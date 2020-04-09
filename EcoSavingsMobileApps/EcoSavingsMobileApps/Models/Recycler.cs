@@ -1,12 +1,11 @@
-﻿
-namespace EcoSavingsMobileApps.Models
+﻿namespace EcoSavingsMobileApps.Models
 {
     class Recycler 
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string FullName { get; set; }
-        public int TotalPoints { get; set; }
-        public string EcoLevel { get; set; }
+        public string RecyclerUsername { get; set; }
+        public string RecyclerPassword { get; set; }
+        public string RecyclerFullName { get; set; }
+        public int RecyclerTotalPoints { get; set; }
+        public string RecyclerEcoLevel { get; set; }
     }
 }

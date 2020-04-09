@@ -9,12 +9,14 @@ namespace EcoSavingsMobileApps.ViewModel
 {
     class RecyclerSignUpViewModel : INotifyPropertyChanged
     {
-
         private bool recyclerCanSignUp;
 
         public bool RecyclerCanSignUp
         {
-            get { return recyclerCanSignUp; }
+            get
+            {
+                return recyclerCanSignUp;
+            }
             set
             {
                 recyclerCanSignUp = value;
@@ -24,112 +26,126 @@ namespace EcoSavingsMobileApps.ViewModel
 
         public static Recycler Recycler { get; set; }
 
-        public string Username
+        public string RecyclerUsername
         {
             get
             {
-                return Recycler.Username;
+                return Recycler.RecyclerUsername;
             }
             set
             {
-                Recycler.Username = value;
-                RecyclerCanSignUp = (!string.IsNullOrWhiteSpace(Username) &&
-                             !string.IsNullOrWhiteSpace(Password) &&
-                             !string.IsNullOrWhiteSpace(ConfirmPassword) &&
-                             !string.IsNullOrWhiteSpace(FullName));
+                Recycler.RecyclerUsername = value;
+                RecyclerCanSignUp = (!string.IsNullOrWhiteSpace(RecyclerUsername) &&
+                    !string.IsNullOrWhiteSpace(RecyclerPassword) &&
+                    !string.IsNullOrWhiteSpace(RecyclerConfirmPassword));
                 OnPropertyChanged();
             }
         }
 
-        public string Password
+        public string RecyclerPassword
         {
             get
             {
-                return Recycler.Password;
+                return Recycler.RecyclerPassword;
             }
             set
             {
-                Recycler.Password = value;
-                RecyclerCanSignUp = (!string.IsNullOrWhiteSpace(Username) &&
-                             !string.IsNullOrWhiteSpace(Password) &&
-                             !string.IsNullOrWhiteSpace(ConfirmPassword) &&
-                             !string.IsNullOrWhiteSpace(FullName));
+                Recycler.RecyclerPassword = value;
+                RecyclerCanSignUp = (!string.IsNullOrWhiteSpace(RecyclerUsername) &&
+                    !string.IsNullOrWhiteSpace(RecyclerPassword) &&
+                    !string.IsNullOrWhiteSpace(RecyclerConfirmPassword));
                 OnPropertyChanged();
             }
         }
 
-        private string confirmPassword;
-        public string ConfirmPassword
+        public string recyclerConfirmPassword;
+        public string RecyclerConfirmPassword
         {
             get
             {
-                return confirmPassword;
+                return recyclerConfirmPassword;
             }
             set
             {
-                confirmPassword = value;
-                RecyclerCanSignUp = (!string.IsNullOrWhiteSpace(Username) &&
-                             !string.IsNullOrWhiteSpace(Password) &&
-                             !string.IsNullOrWhiteSpace(ConfirmPassword) &&
-                             !string.IsNullOrWhiteSpace(FullName));
+                recyclerConfirmPassword = value;
+                RecyclerCanSignUp = (!string.IsNullOrWhiteSpace(RecyclerUsername) &&
+                    !string.IsNullOrWhiteSpace(RecyclerPassword) &&
+                    !string.IsNullOrWhiteSpace(RecyclerConfirmPassword));
                 OnPropertyChanged();
             }
         }
 
-        private string fullName;
-        public string FullName
+        public string RecyclerFullName
         {
             get
             {
-                return fullName;
+                return Recycler.RecyclerFullName;
             }
             set
             {
-                fullName = value;
-                RecyclerCanSignUp = (!string.IsNullOrWhiteSpace(Username) &&
-                             !string.IsNullOrWhiteSpace(Password) &&
-                             !string.IsNullOrWhiteSpace(ConfirmPassword) &&
-                             !string.IsNullOrWhiteSpace(FullName));
+                Recycler.RecyclerFullName = value;
                 OnPropertyChanged();
             }
         }
 
-        public ICommand CanSignUpRecycler { get; set; }
+        public string EcoLevel
+        {
+            get
+            {
+                return Recycler.RecyclerEcoLevel;
+            }
+            set
+            {
+                Recycler.RecyclerEcoLevel = "none";
+            }
+        }
+
+        public ICommand SignUpRecycler { get; set; }
 
         public RecyclerSignUpViewModel()
         {
+            SignUpRecycler = new Command(RecyclerSignUpExecute, CanSignUpR);
             Recycler = new Recycler();
-            CanSignUpRecycler = new Command(RecyclerSignUpExecute, CanRecyclerSignUp);
+        }
+
+        
+
+        private bool CanSignUpR(object arg)
+        {
+            return RecyclerCanSignUp;
         }
 
         private async void RecyclerSignUpExecute(object obj)
         {
             if (CheckPassword())
             {
-                if (!string.IsNullOrWhiteSpace(Username) &&
-                    !string.IsNullOrWhiteSpace(Password) &&
-                    !string.IsNullOrWhiteSpace(FullName))
+                if (!string.IsNullOrWhiteSpace(RecyclerUsername) &&
+                    !string.IsNullOrWhiteSpace(RecyclerPassword) &&
+                    !string.IsNullOrWhiteSpace(RecyclerFullName))
                 {
-                    await RecyclerAuthenticate.AddRecycler(Recycler);
+                    await RecyclerUserAuth.AddRecycler(Recycler);
                     await Application.Current.MainPage.Navigation.PopAsync();
                 }
             }
         }
 
-        private bool CanRecyclerSignUp(object arg)
+        private bool CheckRecyclerPassword()
         {
-            return RecyclerCanSignUp;
-        }
-
-        private bool CheckPassword()
-        {
-            if (ConfirmPassword == Password)
+            if (RecyclerConfirmPassword == RecyclerPassword)
             {
                 return true;
             }
             return false;
         }
 
+        private bool CheckPassword()
+        {
+            if (RecyclerConfirmPassword == RecyclerPassword)
+            {
+                return true;
+            }
+            return false;
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged([CallerMemberName] string propertyName = "")
