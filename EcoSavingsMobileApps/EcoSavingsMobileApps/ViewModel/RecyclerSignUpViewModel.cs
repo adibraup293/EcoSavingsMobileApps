@@ -90,13 +90,14 @@ namespace EcoSavingsMobileApps.ViewModel
 
         public string EcoLevel
         {
-            get
-            {
-                return Recycler.RecyclerEcoLevel;
+            get 
+            { 
+                return Recycler.RecyclerEcoLevel; 
             }
             set
             {
-                Recycler.RecyclerEcoLevel = "none";
+                Recycler.RecyclerEcoLevel = value;
+                OnPropertyChanged();
             }
         }
 
@@ -117,7 +118,7 @@ namespace EcoSavingsMobileApps.ViewModel
 
         private async void RecyclerSignUpExecute(object obj)
         {
-            if (CheckPassword())
+            if (CheckRecyclerPassword())
             {
                 if (!string.IsNullOrWhiteSpace(RecyclerUsername) &&
                     !string.IsNullOrWhiteSpace(RecyclerPassword) &&
@@ -138,14 +139,6 @@ namespace EcoSavingsMobileApps.ViewModel
             return false;
         }
 
-        private bool CheckPassword()
-        {
-            if (RecyclerConfirmPassword == RecyclerPassword)
-            {
-                return true;
-            }
-            return false;
-        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged([CallerMemberName] string propertyName = "")
