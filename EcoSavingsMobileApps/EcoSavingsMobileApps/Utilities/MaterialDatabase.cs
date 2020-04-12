@@ -29,7 +29,7 @@ namespace EcoSavingsMobileApps.Utilities
                         Description = item.Object.Description,
                         Username = item.Object.Username,
                         PointsPerKg = item.Object.PointsPerKg,
-                        key = item.Key
+                        Key = item.Key
                     }).ToList();
 
                 ObservableCollection<Material> materialsList = new ObservableCollection<Material>();
