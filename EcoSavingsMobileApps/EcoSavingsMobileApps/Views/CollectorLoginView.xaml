@@ -16,7 +16,7 @@
     <ContentPage.Content>
         <StackLayout BindingContext="{StaticResource Key=CollectorLoginVM}"
                      Margin="10"
-                     Padding="10"
+                     Padding="20"
                      BackgroundColor="SlateGray">
             <Grid>
                 <Grid.RowDefinitions>

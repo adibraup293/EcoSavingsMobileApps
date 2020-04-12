@@ -14,7 +14,7 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout Margin="20"
+        <StackLayout Margin="5"
                      BackgroundColor="CadetBlue"
                      Padding="20"
                      BindingContext="{StaticResource Key=HomeVM}">
@@ -47,7 +47,7 @@
                         Margin="30, 0"
                         VerticalOptions="FillAndExpand"
                         HorizontalOptions="FillAndExpand"
-                        Text="User"
+                        Text="Admin"
                         FontSize="20"
                         TextColor="Wheat"
                         BackgroundColor="Purple"
