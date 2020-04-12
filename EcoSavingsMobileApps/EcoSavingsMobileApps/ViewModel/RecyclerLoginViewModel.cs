@@ -125,7 +125,7 @@ namespace EcoSavingsMobileApps.ViewModel
                          }
                          App.Username = Username;
                          await Application.Current.MainPage.Navigation.PushAsync(
-                             new Views.HomeView());
+                             new Views.RecyclerHomeView());
                      }
                      else
                      {

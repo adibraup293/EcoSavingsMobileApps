@@ -3,13 +3,74 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:EcoSavingsMobileApps.ViewModel"
              mc:Ignorable="d"
              x:Class="EcoSavingsMobileApps.Views.AdminHomeView">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+    <ContentPage.BindingContext>
+        <local:AdminHomeViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+                     
+                     Order="Primary"
+                     Priority="0"
+                     Command="{Binding AddNewMaterial}"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content >
+
+        <StackLayout BackgroundColor="CadetBlue">
+            <StackLayout Orientation="Horizontal"
+                         Margin="15">
+                <Label Text="Material ID"
+                       HorizontalOptions="CenterAndExpand"
+                       FontSize="15"
+                       TextColor="Black"/>
+                <Label Text="Material Name"
+                       HorizontalOptions="CenterAndExpand"
+                       FontSize="15"
+                       TextColor="Black"/>
+                <Label Text="Description"
+                       HorizontalOptions="CenterAndExpand"
+                       FontSize="15"
+                       TextColor="Black"/>
+                <Label Text="Points per KG"
+                       HorizontalOptions="CenterAndExpand"
+                       FontSize="15"
+                       TextColor="Black"/>
+            </StackLayout>
+            <ListView x:Name="bookListView" 
+                      ItemsSource="{Binding MaterialsList}"
+                      SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         Margin="10">
+                                <Label Text="{Binding MaterialID}"
+                                       FontSize="15"
+                                       HorizontalOptions="CenterAndExpand"
+                                       HorizontalTextAlignment="Start"                                       
+                                       Margin="0, 0, 20, 0"/>
+
+                                <Label Text="{Binding MaterialName}"
+                                       FontSize="15"
+                                       HorizontalOptions="CenterAndExpand"/>
+
+                                <Label Text="{Binding Description}"
+                                       FontSize="15"
+                                       HorizontalOptions="CenterAndExpand"/>
+
+                                <Label Text="{Binding PointsPerKG}"
+                                       FontSize="15"
+                                       HorizontalOptions="CenterAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

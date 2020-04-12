@@ -63,11 +63,11 @@ namespace EcoSavingsMobileApps.ViewModel
         {
             get
             {
-                return CollectorConfirmPassword;
+                return collectorConfirmPassword;
             }
             set
             {
-                CollectorConfirmPassword = value;
+                collectorConfirmPassword = value;
                 CollectorCanSignUp = (!string.IsNullOrWhiteSpace(CollectorUsername) &&
                     !string.IsNullOrWhiteSpace(CollectorPassword) &&
                     !string.IsNullOrWhiteSpace(CollectorConfirmPassword));

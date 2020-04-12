@@ -6,7 +6,7 @@ namespace EcoSavingsMobileApps.Models
 {
     class Submission
     {
-        public int SubmissionID { get; set; }
+        public string SubmissionID { get; set; }
         public DateTime ProposedDate { get; set; }
         public DateTime ActualDate { get; set; }
         public double WeightInKG { get; set; }
