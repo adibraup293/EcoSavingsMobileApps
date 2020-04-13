@@ -10,10 +10,16 @@ namespace EcoSavingsMobileApps.ViewModel
     class RecyclerHomeViewModel : INotifyPropertyChanged
     {
         public ICommand OpenUpdateRecyclerProfileView { get; set; }
+        public ICommand OpenMakeAppointmentView { get; set; }
+        public ICommand OpenSubmissionHistoryView { get; set; }
+        public ICommand Back { get; set; }
 
         public RecyclerHomeViewModel()
         {
             OpenUpdateRecyclerProfileView = new Command(OpenRecyclerUpdateExecute);
+            OpenMakeAppointmentView = new Command(OpenMakeAppointmentExecute);
+            OpenSubmissionHistoryView = new Command(OpenSubmissionHistoryExecute);
+            Back = new Command(BackExecute);
         }
 
         private void OpenRecyclerUpdateExecute(object obj)
@@ -21,6 +27,24 @@ namespace EcoSavingsMobileApps.ViewModel
             UpdateRecyclerProfileViewModel.Recycler = (Recycler)obj;
             Application.Current.MainPage.Navigation.PushAsync(
                 new Views.UpdateRecyclerProfileView());
+        }
+
+        private void OpenMakeAppointmentExecute(object obj)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(
+                new Views.MakeAppointmentView());
+        }
+
+        private void OpenSubmissionHistoryExecute(object obj)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(
+                new Views.SubmissionHistoryView());
+        }
+
+        private void BackExecute(object obj)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(
+                new Views.HomeView());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

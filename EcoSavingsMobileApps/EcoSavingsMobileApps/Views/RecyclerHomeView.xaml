@@ -52,6 +52,7 @@
                         FontSize="16"
                         TextColor="White"
                         BackgroundColor="Black"
+                        Command="{Binding OpenMakeAppointmentView}"
                         CornerRadius="10"/>
 
                 <Button Grid.Row="4"
@@ -63,6 +64,7 @@
                         FontSize="16"
                         TextColor="White"
                         BackgroundColor="Black"
+                        Command="{Binding OpenSubmissionHistoryView}"
                         CornerRadius="10"/>
                 
                 <Button Grid.Row="6"
@@ -74,6 +76,7 @@
                         FontSize="16"
                         TextColor="White"
                         BackgroundColor="Black"
+                        Command="{Binding OpenUpdateRecyclerProfileView}"
                         CornerRadius="10"/>
 
                 <Button Grid.Row="8"
@@ -85,6 +88,7 @@
                         FontSize="16"
                         TextColor="White"
                         BackgroundColor="Black"
+                        Command="{Binding Back}"
                         CornerRadius="10"/>
 
 

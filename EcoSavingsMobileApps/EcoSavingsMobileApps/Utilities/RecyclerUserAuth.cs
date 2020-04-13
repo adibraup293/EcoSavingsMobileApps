@@ -51,14 +51,14 @@ namespace EcoSavingsMobileApps.Utilities
             }
         }
 
-        public static async Task<Recycler> GetRecycler(Recycler recycler)
+        public static async Task<Recycler> GetRecycler(Recycler Recycler)
         {
             try
             {
                 var allRecyclers = await GetAllRecyclers();
                 if (allRecyclers != null)
                 {
-                    return allRecyclers.Where(a => a.RecyclerUsername == recycler.RecyclerUsername).FirstOrDefault();
+                    return allRecyclers.Where(a => a.RecyclerUsername == Recycler.RecyclerUsername).FirstOrDefault();
                 }
                 return null;
             }
@@ -66,6 +66,23 @@ namespace EcoSavingsMobileApps.Utilities
             {
                 await Application.Current.MainPage.DisplayAlert("Firebase Exception FA2", ex.Message, "OK");
                 return null;
+            }
+        }
+
+        public static async Task UpdateRecycler(Recycler recycler)
+        {
+            try
+            {
+                if (recycler != null)
+                {
+                    var toUpdateRecycler = (await firebase.Child("Recyclers")
+                        .OnceAsync<Recycler>()).Where(a => a.Key == recycler.Key).FirstOrDefault();
+                    await firebase.Child("Recyclers").Child(toUpdateRecycler.Key).PutAsync(recycler);
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Firebase Exception FH3", ex.Message, "OK");
             }
         }
     }
