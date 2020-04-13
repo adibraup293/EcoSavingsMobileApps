@@ -17,7 +17,7 @@
         <StackLayout Margin="20"
                      BackgroundColor="SlateGray"
                      Padding="20"
-                     BindingContext="{StaticResource Key=CollectorSUVM}">
+                     BindingContext="{StaticResource Key=UpdateUserVM}">
 
             <Grid>
                 <Grid.RowDefinitions>
