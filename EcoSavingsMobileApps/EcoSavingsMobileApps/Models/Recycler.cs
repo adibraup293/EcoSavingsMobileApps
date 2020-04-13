@@ -7,6 +7,7 @@
         public string RecyclerFullName { get; set; }
         public int RecyclerTotalPoints { get; set; }
         public string RecyclerEcoLevel { get; set; }
+        public string Key { get; set; }
 
         public const string EcoLevelOne = "NewBie";
         public const string EcoLevelTwo = "Eco-Saver";

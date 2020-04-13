@@ -93,7 +93,7 @@
                         BackgroundColor="SaddleBrown"
                         FontSize="20"
                         Command="{Binding SignInRecycler}"
-                        CommandParameter="{Binding CanSign}"/>
+                        CommandParameter="{Binding CanSignInRecycler}"/>
 
                 <Button Grid.Row="5"
                         Grid.Column="1" 

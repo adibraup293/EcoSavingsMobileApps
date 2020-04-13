@@ -120,8 +120,7 @@ namespace EcoSavingsMobileApps.ViewModel
             if (CheckCollectorPassword())
             {
                 if (!string.IsNullOrWhiteSpace(CollectorUsername) &&
-                    !string.IsNullOrWhiteSpace(CollectorPassword) &&
-                    !string.IsNullOrWhiteSpace(CollectorFullName))
+                    !string.IsNullOrWhiteSpace(CollectorPassword))
                 {
                     await CollectorUserAuth.AddCollector(Collector);
                     await Application.Current.MainPage.Navigation.PopAsync();
