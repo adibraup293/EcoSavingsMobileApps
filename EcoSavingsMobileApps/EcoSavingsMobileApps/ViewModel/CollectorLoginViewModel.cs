@@ -91,11 +91,19 @@ namespace EcoSavingsMobileApps.ViewModel
 
         public ICommand SignInCollector { get; set; }
         public ICommand OpenCollectorSignUpView { get; set; }
+        public ICommand Back { get; set; }
+
+        private void BackExecute(object obj)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(
+                new Views.HomeView());
+        }
 
         public CollectorLoginViewModel()
         {
             SignInCollector = new Command(SignInExecute, CollectorCanSignIn);
             OpenCollectorSignUpView = new Command(OpenCollectorSignUpExecute);
+            Back = new Command(BackExecute);
             Collector = new Collector();
         }
 

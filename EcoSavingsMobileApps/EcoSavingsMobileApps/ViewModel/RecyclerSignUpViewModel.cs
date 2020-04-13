@@ -102,10 +102,18 @@ namespace EcoSavingsMobileApps.ViewModel
         }
 
         public ICommand SignUpRecycler { get; set; }
+        public ICommand Back { get; set; }
+
+        private void BackExecute(object obj)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(
+                new Views.HomeView());
+        }
 
         public RecyclerSignUpViewModel()
         {
             SignUpRecycler = new Command(RecyclerSignUpExecute, CanSignUpR);
+            Back = new Command(BackExecute);
             Recycler = new Recycler();
         }
 

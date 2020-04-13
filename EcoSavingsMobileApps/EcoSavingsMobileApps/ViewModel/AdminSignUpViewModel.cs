@@ -89,10 +89,18 @@ namespace EcoSavingsMobileApps.ViewModel
         }
 
         public ICommand SignUpUser { get; set; }
+        public ICommand Back { get; set; }
+
+        private void BackExecute(object obj)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(
+                new Views.HomeView());
+        }
 
         public AdminSignUpViewModel()
         {
             SignUpUser = new Command(UserSignUpExecute, CanSignUpU);
+            Back = new Command(BackExecute);
             User = new User();
         }
 
