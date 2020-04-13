@@ -37,6 +37,7 @@ namespace EcoSavingsMobileApps.ViewModel
 
         private void OpenUpdateUserExecute(object obj)
         {
+            UpdateUserViewModel.Collector = (Collector)obj;
             Application.Current.MainPage.Navigation.PushAsync(
                 new Views.UpdateUserView());
         }

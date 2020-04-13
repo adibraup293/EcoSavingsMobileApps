@@ -74,9 +74,9 @@
                            FontSize="15"
                            TextColor="Black"/>
                 </StackLayout>
-                <ListView x:Name="bookListView" 
+                <ListView x:Name="materialsListView" 
                           Grid.Row="4"
-                          ItemsSource="{Binding BooksList}"
+                          ItemsSource="{Binding MaterialsList}"
                           SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -126,7 +126,9 @@
                         FontSize="16"
                         TextColor="White"
                         BackgroundColor="Black"
-                        CornerRadius="10"/>
+                        CornerRadius="10"
+                        Command="{Binding Back}"
+                        />
 
             </Grid>
         </StackLayout>

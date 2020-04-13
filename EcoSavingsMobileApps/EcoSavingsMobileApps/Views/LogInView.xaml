@@ -9,7 +9,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:LogInViewModel x:Key="LVM" />
+            <local:LogInViewModel x:Key="LVM"/>
         </ResourceDictionary>
     </ContentPage.Resources>
 
