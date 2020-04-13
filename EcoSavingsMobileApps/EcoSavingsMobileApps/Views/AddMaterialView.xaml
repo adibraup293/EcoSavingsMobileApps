@@ -12,9 +12,7 @@
             <local:AddMaterialViewModel x:Key="AddMaterialVM" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    
-    
-    
+      
     <ContentPage.Content>
         <StackLayout Margin="20"
                      Padding="20"

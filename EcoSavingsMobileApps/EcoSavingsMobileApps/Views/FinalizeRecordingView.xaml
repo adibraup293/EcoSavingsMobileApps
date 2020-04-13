@@ -3,8 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:EcoSavingsMobileApps.ViewModel"
              mc:Ignorable="d"
              x:Class="EcoSavingsMobileApps.Views.FinalizeRecordingView">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:FinalizeRecordingViewModel x:Key="FinalizeRecordingVM" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <StackLayout Margin="5"
                      BackgroundColor="Accent"
@@ -12,9 +20,9 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.2*"/>
-                    <RowDefinition Height="0.01*"/>
+                    <RowDefinition Height="0*"/>
                     <RowDefinition Height="0.2*"/>
-                    <RowDefinition Height="0.01*"/>
+                    <RowDefinition Height="0*"/>
                     <RowDefinition Height="0.2*"/>
                     <RowDefinition Height="0.5*"/>
                     <RowDefinition Height="0.1*"/>
