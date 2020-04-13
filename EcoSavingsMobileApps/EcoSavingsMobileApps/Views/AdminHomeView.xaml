@@ -41,7 +41,7 @@
                        FontSize="15"
                        TextColor="Black"/>
             </StackLayout>
-            <ListView x:Name="bookListView" 
+            <ListView x:Name="materialListView" 
                       ItemsSource="{Binding MaterialsList}"
                       SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
                 <ListView.ItemTemplate>
