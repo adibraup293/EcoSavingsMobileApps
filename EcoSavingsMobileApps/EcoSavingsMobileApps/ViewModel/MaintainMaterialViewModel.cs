@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace EcoSavingsMobileApps.ViewModel
 {
-    class CollectorHomeViewModel
+    class MaintainMaterialViewModel
     {
     }
 }
