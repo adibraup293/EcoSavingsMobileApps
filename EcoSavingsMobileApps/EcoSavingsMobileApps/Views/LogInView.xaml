@@ -108,7 +108,7 @@
                         TextColor="Beige"
                         BackgroundColor="DarkRed"
                         Font="20"
-                        Command="{Binding OpenSignUpView}"/>
+                        Command="{Binding Back}"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
