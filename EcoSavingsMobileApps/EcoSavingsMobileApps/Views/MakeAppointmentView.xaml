@@ -12,11 +12,13 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.1*"/>
-                    <RowDefinition Height="0.01*"/>
-                    <RowDefinition Height="1.0*"/>
-                    <RowDefinition Height="0.01*"/>
+                    <RowDefinition Height="0.001*"/>
                     <RowDefinition Height="0.1*"/>
                     <RowDefinition Height="0.01*"/>
+                    <RowDefinition Height="1.0*"/>
+                    <RowDefinition Height="0.001*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.05*"/>
                     <RowDefinition Height="0.1*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -29,7 +31,16 @@
                        HorizontalOptions="Center"
                        VerticalOptions="Center"
                        FontSize="25"
-                       Text="Record material submission"
+                       Text="Submit a material"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"/>
+
+                <Label Grid.ColumnSpan="3"
+                       Grid.Row="2"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="20"
+                       Text="Select a material from the list below:"
                        HorizontalTextAlignment="Center"
                        TextColor="Black"/>
 
@@ -45,7 +56,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
 
-                <Button Grid.Row="4"
+                <Button Grid.Row="6"
                         Grid.ColumnSpan="3"
                         Margin="30, 0"
                         VerticalOptions="FillAndExpand"
@@ -56,7 +67,7 @@
                         BackgroundColor="Black"
                         CornerRadius="10"/>
 
-                <Button Grid.Row="6"
+                <Button Grid.Row="8"
                         Grid.ColumnSpan="3"
                         Margin="30, 0"
                         VerticalOptions="FillAndExpand"

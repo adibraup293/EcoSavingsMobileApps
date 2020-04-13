@@ -9,7 +9,76 @@
         <StackLayout Margin="5"
                      BackgroundColor="Accent"
                      Padding="20" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.001*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.01*"/>
+                    <RowDefinition Height="1.0*"/>
+                    <RowDefinition Height="0.001*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.05*"/>
+                    <RowDefinition Height="0.1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
 
+                <Label Grid.ColumnSpan="3"
+                       Grid.Row="0"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="25"
+                       Text="Record material submission"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"/>
+
+                <Label Grid.ColumnSpan="3"
+                       Grid.Row="2"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="20"
+                       Text="Select a material from the list below:"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"/>
+
+                <ListView x:Name="listView"
+                          Margin="20"
+                          ItemSelected="OnListViewItemSelected" 
+                          Grid.Row="2">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Text}"
+                          Detail="{Binding Date}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Button Grid.Row="6"
+                        Grid.ColumnSpan="3"
+                        Margin="30, 0"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Proceed"
+                        FontSize="16"
+                        TextColor="White"
+                        BackgroundColor="Black"
+                        CornerRadius="10"/>
+
+                <Button Grid.Row="8"
+                        Grid.ColumnSpan="3"
+                        Margin="30, 0"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Text="back"
+                        FontSize="16"
+                        TextColor="White"
+                        BackgroundColor="Black"
+                        CornerRadius="10"/>
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
