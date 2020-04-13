@@ -12,11 +12,11 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.1*"/>
-                    <RowDefinition Height="0.001*"/>
+                    <RowDefinition Height="0*"/>
                     <RowDefinition Height="0.1*"/>
                     <RowDefinition Height="0.1*"/>
                     <RowDefinition Height="0.8*"/>
-                    <RowDefinition Height="0.001*"/>
+                    <RowDefinition Height="0*"/>
                     <RowDefinition Height="0.1*"/>
                     <RowDefinition Height="0.05*"/>
                     <RowDefinition Height="0.1*"/>
@@ -68,11 +68,11 @@
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal"
                                              Margin="10">
-                                    <Label Text="{Binding MaterialID}"
+                                    <Label Text="{Binding Username}"
                                        FontSize="15"
                                        HorizontalOptions="CenterAndExpand"/>
 
-                                    <Label Text="{Binding MaterialName}"
+                                    <Label Text="{Binding FullName}"
                                        FontSize="15"
                                        HorizontalOptions="CenterAndExpand"/>
                                 </StackLayout>
@@ -101,7 +101,7 @@
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal"
                                              Margin="10">
-                                    <Label Text="{Binding MaterialID}"
+                                    <Label Text="{Binding Address}"
                                        FontSize="15"
                                        HorizontalOptions="CenterAndExpand"/>
                                 </StackLayout>

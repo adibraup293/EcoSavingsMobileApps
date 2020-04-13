@@ -12,11 +12,11 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.15*"/>
-                    <RowDefinition Height="0.001*"/>
+                    <RowDefinition Height="0*"/>
                     <RowDefinition Height="0.1*"/>
                     <RowDefinition Height="0.1*"/>
                     <RowDefinition Height="0.8*"/>
-                    <RowDefinition Height="0.001*"/>
+                    <RowDefinition Height="0*"/>
                     <RowDefinition Height="0.1*"/>
                     <RowDefinition Height="0.05*"/>
                     <RowDefinition Height="0.1*"/>
@@ -83,21 +83,29 @@
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal"
                                              Margin="10">
-                                    <Label Text="{Binding MaterialID}"
+                                    <Label Text="{Binding SubmissionID}"
                                        FontSize="15"
                                        HorizontalOptions="CenterAndExpand"
                                        HorizontalTextAlignment="Start"                                       
                                        Margin="0, 0, 20, 0"/>
 
-                                    <Label Text="{Binding MaterialName}"
+                                    <Label Text="{Binding ProposedDate}"
                                        FontSize="15"
                                        HorizontalOptions="CenterAndExpand"/>
 
-                                    <Label Text="{Binding Description}"
+                                    <Label Text="{Binding ActualDate}"
                                        FontSize="15"
                                        HorizontalOptions="CenterAndExpand"/>
 
-                                    <Label Text="{Binding PointsPerKG}"
+                                    <Label Text="{Binding WeightInKG}"
+                                       FontSize="15"
+                                       HorizontalOptions="CenterAndExpand"/>
+
+                                    <Label Text="{Binding PointsAwarded}"
+                                       FontSize="15"
+                                       HorizontalOptions="CenterAndExpand"/>
+
+                                    <Label Text="{Binding Status}"
                                        FontSize="15"
                                        HorizontalOptions="CenterAndExpand"/>
                                 </StackLayout>
