@@ -9,7 +9,71 @@
         <StackLayout Margin="5"
                      BackgroundColor="Accent"
                      Padding="20" >
-            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.01*"/>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.01*"/>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.05*"/>
+                    <RowDefinition Height="0.1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.ColumnSpan="3"
+                       Grid.Row="0"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="35"
+                       Text="Finalise recording of material submission"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"/>
+
+                <Label Grid.ColumnSpan="3"
+                       Grid.Row="2"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="25"
+                       Text="Enter the weight of the material (in kg):"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"/>
+
+                <Entry Grid.Row="4"
+                       Grid.ColumnSpan="3"
+                       Placeholder="Enter weight"
+                       FontSize="20"
+                       TextColor="Black"
+                       Text="" />
+
+                <Button Grid.Row="6"
+                        Grid.ColumnSpan="3"
+                        Margin="30, 0"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Confirm"
+                        FontSize="16"
+                        TextColor="White"
+                        BackgroundColor="Black"
+                        CornerRadius="10"/>
+
+                <Button Grid.Row="8"
+                        Grid.ColumnSpan="3"
+                        Margin="30, 0"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Text="back"
+                        FontSize="16"
+                        TextColor="White"
+                        BackgroundColor="Black"
+                        CornerRadius="10"/>
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -47,7 +47,7 @@
                 <ListView x:Name="listView"
                           Margin="20"
                           ItemSelected="OnListViewItemSelected" 
-                          Grid.Row="2">
+                          Grid.Row="4">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <TextCell Text="{Binding Text}"
