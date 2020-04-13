@@ -102,6 +102,14 @@
                         BackgroundColor="Brown"
                         Font="20"
                         Command="{Binding OpenCollectorSignUpView}"/>
+
+                <Button Grid.Row="9"
+                        Grid.ColumnSpan="2"
+                        Text="Back"
+                        TextColor="Beige"
+                        BackgroundColor="DarkRed"
+                        Font="20"
+                        Command="{Binding Back}"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
