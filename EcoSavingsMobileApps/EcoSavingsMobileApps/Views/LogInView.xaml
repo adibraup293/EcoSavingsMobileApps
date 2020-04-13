@@ -94,6 +94,14 @@
                         BackgroundColor="Brown"
                         Font="20"
                         Command="{Binding OpenSignUpView}"/>
+
+                <Button Grid.Row="9"
+                        Grid.ColumnSpan="2"
+                        Text="Back"
+                        TextColor="Beige"
+                        BackgroundColor="DarkRed"
+                        Font="20"
+                        Command="{Binding OpenSignUpView}"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

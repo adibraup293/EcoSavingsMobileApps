@@ -90,11 +90,19 @@ namespace EcoSavingsMobileApps.ViewModel
 
         public ICommand SignIn { get; set; }
         public ICommand OpenSignUpView { get; set; }
+        public ICommand Back { get; set; }
+
+        private void BackExecute(object obj)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(
+                new Views.HomeView());
+        }
 
         public LogInViewModel()
         {
             SignIn = new Command(SignInExecute, CanSignIn);
             OpenSignUpView = new Command(OpenSignUpExecute);
+            Back = new Command(BackExecute);
             User = new User();
         }
 
