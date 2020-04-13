@@ -8,5 +8,6 @@ namespace EcoSavingsMobileApps.Models
         public string CollectorFullName { get; set; }
         public int TotalPoints { get; set; }
         public string CollectorAddress { get; set; }
+        public string Key { get; set; }
     }
 }

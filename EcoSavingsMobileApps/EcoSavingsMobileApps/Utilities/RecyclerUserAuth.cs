@@ -25,6 +25,7 @@ namespace EcoSavingsMobileApps.Utilities
                     RecyclerPassword = item.Object.RecyclerPassword,
                     RecyclerFullName = item.Object.RecyclerFullName,
                     RecyclerTotalPoints = item.Object.RecyclerTotalPoints,
+                    Key = item.Key,
                     RecyclerEcoLevel = item.Object.RecyclerEcoLevel
                 }).ToList();
             }

@@ -66,6 +66,13 @@
                        FontSize="20"
                        TextColor="Black" />
 
+                <Label Grid.Row="4"
+                       Grid.Column="0" 
+                       VerticalTextAlignment="Center"
+                       Text="show password"
+                       FontSize="20"
+                       TextColor="Black" />
+
                 <Entry x:Name="entPassword" Grid.Row="3"
                        Grid.Column="1"
                        Placeholder="Enter password"

@@ -25,6 +25,7 @@ namespace EcoSavingsMobileApps.Utilities
                     CollectorPassword = item.Object.CollectorPassword,
                     CollectorFullName = item.Object.CollectorFullName,
                     TotalPoints = item.Object.TotalPoints,
+                    Key = item.Key,
                     CollectorAddress = item.Object.CollectorAddress
                 }).ToList();
             }
@@ -41,7 +42,7 @@ namespace EcoSavingsMobileApps.Utilities
             {
                 if (Collector != null)
                 {
-                    await firebase.Child("Collector").PostAsync(Collector);
+                    await firebase.Child("Collectors").PostAsync(Collector);
                 }
             }
             catch (Exception ex)
@@ -65,6 +66,23 @@ namespace EcoSavingsMobileApps.Utilities
             {
                 await Application.Current.MainPage.DisplayAlert("Firebase Exception FA2", ex.Message, "OK");
                 return null;
+            }
+        }
+
+        public static async Task UpdateCollector(Collector collector)
+        {
+            try
+            {
+                if (collector != null)
+                {
+                    var toUpdateCollector = (await firebase.Child("Collectors")
+                        .OnceAsync<Collector>()).Where(a => a.Key == collector.Key).FirstOrDefault();
+                    await firebase.Child("Collectors").Child(toUpdateCollector.Key).PutAsync(collector);
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Firebase Exception FH3", ex.Message, "OK");
             }
         }
     }
